@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>村田 悠月 Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Noto+Serif+JP:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <a class="logo" href="#top">村田 悠月</a>
+    <nav class="nav">
+      <a href="#about">About</a>
+      <a href="#works">Works</a>
+      <a href="#skills">Skills</a>
+      <a href="#certifications">Certifications</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <button class="menu-button" aria-label="メニューを開く">Menu</button>
+  </header>
+
+  <main id="top">
+    <section class="hero section-reveal">
+      <p class="eyebrow">Portfolio / Cloud Engineering</p>
+      <h1 class="hero-title">
+        <span>Yuzuki</span>
+        <span>Murata</span>
+      </h1>
+      <p class="hero-subtitle">クラウドエンジニアを目指して、AWSを中心に設計と実装を学んでいます。</p>
+      <div class="scroll-indicator">
+        <span></span>
+        Scroll
+      </div>
+    </section>
+
+    <section id="about" class="section section-reveal">
+      <p class="section-label">About</p>
+      <h2>プロフィール</h2>
+      <div class="about-card">
+        <div class="avatar">
+          <span>Y</span>
+        </div>
+        <div class="about-content">
+          <p class="tagline">AWSを中心にクラウド技術の学習を行っています。クラウド設計に興味があり、AWS SAAの学習と個人制作を通して、実務で活かせる設計・実装力を身につけています。</p>
+          <dl class="profile-list">
+            <div><dt>Name</dt><dd>村田 悠月</dd></div>
+            <div><dt>Role</dt><dd>クラウドエンジニア志望</dd></div>
+            <div><dt>School</dt><dd>日本工学院八王子専門学校 情報科学専門課程 ITスペシャリスト科 在学 / 2028年卒業見込み</dd></div>
+            <div><dt>Focus</dt><dd>AWS, Python, Git, JavaScript</dd></div>
+            <div><dt>GitHub</dt><dd><a href="https://github.com/Muratayuduki" target="_blank" rel="noopener noreferrer">github.com/Muratayuduki</a></dd></div>
+          </dl>
+        </div>
+      </div>
+    </section>
+
+    <section id="works" class="section section-reveal">
+      <p class="section-label">Works</p>
+      <h2>制作物</h2>
+      <div class="works-list">
+        <article class="work-item">
+          <span class="work-number">01</span>
+          <div>
+            <p class="work-type">Personal Project</p>
+            <h3>家計簿アプリ</h3>
+            <p>PayPayの利用履歴をCSVで読み込み、カテゴリごとに支出を自動分類できるようにした家計簿アプリです。グラフで支出傾向を見やすくし、日々の支出を振り返りやすい形にしました。</p>
+            <dl class="work-meta">
+              <div><dt>担当範囲</dt><dd>CSV読み込み、カテゴリ分類、画面表示の実装</dd></div>
+              <div><dt>工夫した点</dt><dd>支出傾向を把握しやすいように、分類結果をグラフで確認できる構成にしました。</dd></div>
+              <div><dt>制作目的</dt><dd>手入力の負担を減らし、決済履歴を学習・分析に活用すること</dd></div>
+            </dl>
+          </div>
+          <ul class="chips"><li>Python</li><li>CSV</li><li>JavaScript</li></ul>
+        </article>
+        <article class="work-item">
+          <span class="work-number">02</span>
+          <div>
+            <p class="work-type">Learning Project</p>
+            <h3>AWS設計学習メモ</h3>
+            <p>AWS SAAの学習内容をもとに、VPC、IAM、S3、EC2などのサービスを整理し、構成パターンや設計上の注意点をまとめています。</p>
+            <dl class="work-meta">
+              <div><dt>目的</dt><dd>クラウド設計の考え方を理解し、説明できる状態にすること</dd></div>
+              <div><dt>学習中</dt><dd>可用性、セキュリティ、コストを意識したAWS構成</dd></div>
+            </dl>
+          </div>
+          <ul class="chips"><li>AWS</li><li>SAA</li><li>Cloud Design</li></ul>
+        </article>
+      </div>
+    </section>
+
+    <section id="skills" class="section section-reveal">
+      <p class="section-label">Skills</p>
+      <h2>スキル</h2>
+      <div class="skill-grid">
+        <div class="skill-group">
+          <h3>Cloud</h3>
+          <div class="skill" style="--level: 68%"><span>AWS</span><b></b></div>
+          <div class="skill" style="--level: 55%"><span>Cloud Design</span><b></b></div>
+          <div class="skill" style="--level: 62%"><span>AWS SAA Study</span><b></b></div>
+        </div>
+        <div class="skill-group">
+          <h3>Programming</h3>
+          <div class="skill" style="--level: 66%"><span>Python</span><b></b></div>
+          <div class="skill" style="--level: 58%"><span>JavaScript</span><b></b></div>
+          <div class="skill" style="--level: 64%"><span>HTML / CSS</span><b></b></div>
+        </div>
+        <div class="skill-group">
+          <h3>Tools</h3>
+          <div class="skill" style="--level: 62%"><span>Git</span><b></b></div>
+          <div class="skill" style="--level: 72%"><span>VS Code</span><b></b></div>
+          <div class="skill" style="--level: 60%"><span>CSV Data Handling</span><b></b></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="certifications" class="section section-reveal">
+      <p class="section-label">Certifications</p>
+      <h2>資格・学習中</h2>
+      <div class="cert-list">
+        <article><span>01</span><h3>G検定</h3><p>取得済み</p></article>
+        <article><span>02</span><h3>基本情報技術者</h3><p>取得済み</p></article>
+        <article><span>03</span><h3>AWS Certified Cloud Practitioner</h3><p>取得済み</p></article>
+        <article><span>04</span><h3>AWS Solutions Architect - Associate</h3><p>学習中</p></article>
+      </div>
+    </section>
+
+    <section id="contact" class="section contact section-reveal">
+      <p class="section-label">Contact</p>
+      <h2>連絡先</h2>
+
+      <div class="contact-links">
+        <a class="contact-link" href="mailto:g024c1036@g.neec.ac.jp">g024c1036@g.neec.ac.jp</a>
+        <a class="contact-link" href="https://github.com/Muratayuduki" target="_blank" rel="noopener noreferrer">GitHub</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <a href="#top">Back to Top</a>
+    <p>© 2026 Yuzuki Murata Portfolio</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
