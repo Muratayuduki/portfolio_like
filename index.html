@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>村田 悠月 Portfolio</title>
+  <title>Yuzuki Murata Portfolio</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Noto+Serif+JP:wght@400;500;700&display=swap" rel="stylesheet">
@@ -11,7 +11,7 @@
 </head>
 <body>
   <header class="site-header">
-    <a class="logo" href="#top">村田 悠月</a>
+    <a class="logo" href="#top">Yuzuki Murata</a>
     <nav class="nav">
       <a href="#about">About</a>
       <a href="#works">Works</a>
@@ -29,7 +29,7 @@
         <span>Yuzuki</span>
         <span>Murata</span>
       </h1>
-      <p class="hero-subtitle">クラウドエンジニアを目指して、AWSを中心に設計と実装を学んでいます。</p>
+      <p class="hero-subtitle">AWSを中心に、クラウド設計と実装を学んでいます。</p>
       <div class="scroll-indicator">
         <span></span>
         Scroll
@@ -44,7 +44,7 @@
           <span>Y</span>
         </div>
         <div class="about-content">
-          <p class="tagline">AWSを中心にクラウド技術の学習を行っています。クラウド設計に興味があり、AWS SAAの学習と個人制作を通して、実務で活かせる設計・実装力を身につけています。</p>
+          <p class="tagline">AWSを中心にクラウド技術の学習を進めています。個人制作やグループ開発を通じて、実務で活かせる設計力と実装力を身につけています。</p>
           <dl class="profile-list">
             <div><dt>Name</dt><dd>村田 悠月</dd></div>
             <div><dt>Role</dt><dd>クラウドエンジニア志望</dd></div>
@@ -59,34 +59,70 @@
     <section id="works" class="section section-reveal">
       <p class="section-label">Works</p>
       <h2>制作物</h2>
-      <div class="works-list">
-        <article class="work-item">
-          <span class="work-number">01</span>
-          <div>
-            <p class="work-type">Personal Project</p>
-            <h3>家計簿アプリ</h3>
-            <p>PayPayの利用履歴をCSVで読み込み、カテゴリごとに支出を自動分類できるようにした家計簿アプリです。グラフで支出傾向を見やすくし、日々の支出を振り返りやすい形にしました。</p>
-            <dl class="work-meta">
-              <div><dt>担当範囲</dt><dd>CSV読み込み、カテゴリ分類、画面表示の実装</dd></div>
-              <div><dt>工夫した点</dt><dd>支出傾向を把握しやすいように、分類結果をグラフで確認できる構成にしました。</dd></div>
-              <div><dt>制作目的</dt><dd>手入力の負担を減らし、決済履歴を学習・分析に活用すること</dd></div>
-            </dl>
-          </div>
-          <ul class="chips"><li>Python</li><li>CSV</li><li>JavaScript</li></ul>
-        </article>
-        <article class="work-item">
-          <span class="work-number">02</span>
-          <div>
-            <p class="work-type">Learning Project</p>
-            <h3>AWS設計学習メモ</h3>
-            <p>AWS SAAの学習内容をもとに、VPC、IAM、S3、EC2などのサービスを整理し、構成パターンや設計上の注意点をまとめています。</p>
-            <dl class="work-meta">
-              <div><dt>目的</dt><dd>クラウド設計の考え方を理解し、説明できる状態にすること</dd></div>
-              <div><dt>学習中</dt><dd>可用性、セキュリティ、コストを意識したAWS構成</dd></div>
-            </dl>
-          </div>
-          <ul class="chips"><li>AWS</li><li>SAA</li><li>Cloud Design</li></ul>
-        </article>
+
+      <div class="work-category">
+        <div class="category-heading">
+          <p class="work-type">Personal Development</p>
+          <h3>個人開発</h3>
+        </div>
+        <div class="works-list">
+          <article class="work-item">
+            <span class="work-number">01</span>
+            <div>
+              <p class="work-type">Personal Project</p>
+              <h3>家計簿アプリ</h3>
+              <p>PayPayの利用履歴をCSVで読み込み、カテゴリごとに支出を自動分類できるようにした家計簿アプリです。グラフで支出傾向を見やすくし、日々の支出を振り返りやすい形にしました。</p>
+              <dl class="work-meta">
+                <div><dt>担当範囲</dt><dd>CSV読み込み、カテゴリ分類、画面表示の実装</dd></div>
+                <div><dt>工夫した点</dt><dd>支出傾向を把握しやすいように、分類結果をグラフで確認できる構成にしました。</dd></div>
+                <div><dt>制作目的</dt><dd>手入力の負担を減らし、決済履歴を学習・分析に活用すること</dd></div>
+              </dl>
+            </div>
+            <ul class="chips"><li>Python</li><li>CSV</li><li>JavaScript</li></ul>
+          </article>
+
+          <article class="work-item">
+            <span class="work-number">02</span>
+            <div>
+              <p class="work-type">Learning Project</p>
+              <h3>AWS設計学習メモ</h3>
+              <p>AWS SAAの学習内容をもとに、VPC、IAM、S3、EC2などのサービスを整理し、構成パターンや設計上の注意点をまとめています。</p>
+              <dl class="work-meta">
+                <div><dt>目的</dt><dd>クラウド設計の考え方を理解し、説明できる状態にすること</dd></div>
+                <div><dt>学習中</dt><dd>可用性、セキュリティ、コストを意識したAWS構成</dd></div>
+              </dl>
+            </div>
+            <ul class="chips"><li>AWS</li><li>SAA</li><li>Cloud Design</li></ul>
+          </article>
+        </div>
+      </div>
+
+      <div class="work-category">
+        <div class="category-heading">
+          <p class="work-type">Group Development</p>
+          <h3>グループ開発</h3>
+        </div>
+        <div class="works-list">
+          <article class="work-item">
+            <span class="work-number">03</span>
+            <div>
+              <p class="work-type">Planning / Documentation</p>
+              <h3>企業企画・会社設立ドキュメント制作</h3>
+              <p>グループで企業の概要、事業企画、プレゼン資料、株式会社定款を作成したプロジェクトです。事業内容を整理し、企画書と発表資料に落とし込むことで、チームでの企画立案とドキュメント作成を経験しました。</p>
+              <dl class="work-meta">
+                <div><dt>制作物</dt><dd>企業概要、企画書、プレゼン資料、株式会社定款</dd></div>
+                <div><dt>学んだ点</dt><dd>事業内容、役割分担、必要書類を整理し、第三者に伝わる資料へまとめること</dd></div>
+                <div><dt>掲載資料</dt><dd>公開前に個人情報や学校名などの記載確認を推奨</dd></div>
+              </dl>
+              <div class="document-links" aria-label="関連資料">
+                <a href="./comp/Presentation02.pdf" target="_blank" rel="noopener noreferrer">プレゼン資料</a>
+                <a href="./comp/企画書_(1).pdf" target="_blank" rel="noopener noreferrer">企画書</a>
+                <a href="./comp/株式会社定款_(1).pdf" target="_blank" rel="noopener noreferrer">定款</a>
+              </div>
+            </div>
+            <ul class="chips"><li>Group Work</li><li>Planning</li><li>Presentation</li></ul>
+          </article>
+        </div>
       </div>
     </section>
 
