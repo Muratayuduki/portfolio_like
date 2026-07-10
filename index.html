@@ -3,177 +3,284 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Yuzuki Murata Portfolio</title>
+  <meta name="description" content="クラウドエンジニアを目指す村田悠月のポートフォリオ。個人開発とグループ開発の成果、スキル、取得資格を掲載しています。" />
+  <meta name="theme-color" content="#07111f" />
+  <title>村田 悠月 | Cloud Engineer Portfolio</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Noto+Serif+JP:wght@400;500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+JP:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="./style.css" />
 </head>
 <body>
   <header class="site-header">
-    <a class="logo" href="#top">Yuzuki Murata</a>
-    <nav class="nav">
-      <a href="#about">About</a>
-      <a href="#works">Works</a>
-      <a href="#skills">Skills</a>
-      <a href="#certifications">Certifications</a>
-      <a href="#contact">Contact</a>
-    </nav>
-    <button class="menu-button" type="button" aria-label="メニューを開く">Menu</button>
+    <div class="header-inner">
+      <a class="logo" href="#top" aria-label="トップへ戻る">
+        <span class="logo-mark">YM</span>
+        <span class="logo-text">Yuzuki Murata<small>Cloud Engineer Portfolio</small></span>
+      </a>
+
+      <nav class="nav" id="global-nav" aria-label="メインナビゲーション">
+        <a href="#about">About</a>
+        <a href="#group-works">Group</a>
+        <a href="#personal-works">Personal</a>
+        <a href="#skills">Skills</a>
+        <a class="nav-contact" href="#contact">Contact</a>
+      </nav>
+
+      <button class="menu-button" type="button" aria-controls="global-nav" aria-expanded="false">
+        <span></span><span></span><span></span>
+        <span class="visually-hidden">メニューを開く</span>
+      </button>
+    </div>
   </header>
 
   <main id="top">
-    <section class="hero section-reveal">
-      <p class="eyebrow">Portfolio / Cloud Engineering</p>
-      <h1 class="hero-title">
-        <span>Yuzuki</span>
-        <span>Murata</span>
-      </h1>
-      <p class="hero-subtitle">AWSを中心に、クラウド設計と実装を学んでいます。</p>
-      <div class="scroll-indicator">
-        <span></span>
-        Scroll
+    <section class="hero">
+      <div class="hero-grid container">
+        <div class="hero-copy section-reveal">
+          <p class="eyebrow"><span></span>2028 Graduate / Cloud Engineer</p>
+          <h1>クラウドで、<br><em>使える仕組み</em>を<br>設計する。</h1>
+          <p class="hero-lead">AWSを軸にクラウドの基礎を学びながら、個人開発では実装力を、グループ開発では協働する力と伝える力を磨いています。</p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="#group-works">グループ開発を見る <span aria-hidden="true">→</span></a>
+            <a class="button button-ghost" href="#personal-works">個人開発を見る</a>
+          </div>
+        </div>
+
+        <aside class="cloud-panel section-reveal" aria-label="現在の学習領域">
+          <div class="panel-bar">
+            <span class="panel-dots" aria-hidden="true"><i></i><i></i><i></i></span>
+            <span>learning-overview.yml</span>
+            <span class="panel-status"><i></i>ACTIVE</span>
+          </div>
+          <div class="panel-body">
+            <p class="code-comment"># CURRENT FOCUS</p>
+            <h2>Cloud Engineering</h2>
+            <div class="learning-focus">
+              <div><strong>AWS</strong><span>Cloud Practitioner</span></div>
+              <div><strong>SAA</strong><span>Study in progress</span></div>
+            </div>
+            <dl class="focus-list">
+              <div><dt>cloud</dt><dd>AWS の基礎知識</dd></div>
+              <div><dt>develop</dt><dd>Python / Web</dd></div>
+              <div><dt>team</dt><dd>分析・企画・ドキュメント</dd></div>
+            </dl>
+            <div class="panel-tags">
+              <span>AWS</span><span>Python</span><span>Git</span><span>Team Work</span>
+            </div>
+          </div>
+        </aside>
+      </div>
+      <div class="hero-grid-lines" aria-hidden="true"></div>
+    </section>
+
+    <div class="summary-bar">
+      <div class="container summary-grid">
+        <div><strong>03</strong><span>取得資格</span></div>
+        <div><strong>03</strong><span>掲載プロジェクト</span></div>
+        <div><strong>02</strong><span>グループ開発</span></div>
+        <div><strong>01</strong><span>個人開発</span></div>
+      </div>
+    </div>
+
+    <section id="about" class="section container section-reveal">
+      <div class="section-heading">
+        <div>
+          <p class="section-label"><span>01</span> About</p>
+          <h2>技術を、目的から考える。</h2>
+        </div>
+        <p>技術を覚えるだけでなく、「なぜそれを使うのか」を説明できるエンジニアを目指しています。</p>
+      </div>
+
+      <div class="about-layout">
+        <div class="about-message">
+          <p class="lead-text">はじめまして、<strong>村田 悠月</strong>です。</p>
+          <p>AWSを中心にクラウド技術を学び、個人制作では実装と改善、グループ開発ではデータ分析や企画・発表に取り組んできました。設計の意図をチームに共有し、最後まで形にできるクラウドエンジニアを目指しています。</p>
+          <a class="text-link" href="https://github.com/Muratayuduki" target="_blank" rel="noopener noreferrer">GitHubを見る <span aria-hidden="true">↗</span></a>
+        </div>
+        <dl class="profile-card">
+          <div><dt>Name</dt><dd>村田 悠月 <small>Yuzuki Murata</small></dd></div>
+          <div><dt>School</dt><dd>日本工学院八王子専門学校<br>ITスペシャリスト科</dd></div>
+          <div><dt>Graduation</dt><dd>2028年 卒業見込み</dd></div>
+          <div><dt>Interest</dt><dd>AWS / Cloud Infrastructure / Backend</dd></div>
+        </dl>
       </div>
     </section>
 
-    <section id="about" class="section section-reveal">
-      <p class="section-label">About</p>
-      <h2>プロフィール</h2>
-      <div class="about-card">
-        <div class="avatar">
-          <span>Y</span>
+    <section id="group-works" class="section container">
+      <div class="section-heading section-reveal">
+        <div>
+          <p class="section-label"><span>02</span> Group Development</p>
+          <h2>チームで取り組んだ制作。</h2>
         </div>
-        <div class="about-content">
-          <p class="tagline">AWSを中心にクラウド技術の学習を進めています。個人制作やグループ開発を通じて、実務で活かせる設計力と実装力を身につけています。</p>
-          <dl class="profile-list">
-            <div><dt>Name</dt><dd>村田 悠月</dd></div>
-            <div><dt>Role</dt><dd>クラウドエンジニア志望</dd></div>
-            <div><dt>School</dt><dd>日本工学院八王子専門学校 情報科学専門課程 ITスペシャリスト科 在学 / 2028年卒業見込み</dd></div>
-            <div><dt>Focus</dt><dd>AWS, Python, Git, JavaScript</dd></div>
-            <div><dt>GitHub</dt><dd><a href="https://github.com/Muratayuduki" target="_blank" rel="noopener noreferrer">github.com/Muratayuduki</a></dd></div>
+        <p>分析と企画、2つのグループ制作を通して、作業だけでなく共有・説明・資料化までを経験しました。</p>
+      </div>
+
+      <article class="featured-project section-reveal">
+        <div class="project-visual data-visual" aria-hidden="true">
+          <div class="chart-title"><span>ATTENDANCE FORECAST</span><b>DATA / ML</b></div>
+          <div class="bar-chart"><i style="--bar:42%"></i><i style="--bar:58%"></i><i style="--bar:51%"></i><i style="--bar:78%"></i><i style="--bar:66%"></i><i style="--bar:88%"></i><i style="--bar:74%"></i></div>
+          <div class="chart-axis"><span>DATA</span><span>MODEL</span><span>RESULT</span></div>
+        </div>
+        <div class="project-content">
+          <div class="project-topline"><span class="project-number">01</span><span class="status-badge">GROUP PROJECT</span></div>
+          <p class="project-type">Machine Learning / Data Analysis</p>
+          <h3>Jリーグ観客動員予想</h3>
+          <p class="project-description">Jリーグの観客動員数を機械学習で予測。データの前処理から特徴量の検討、モデル作成、結果を伝える発表資料への整理まで、チームで取り組みました。</p>
+          <dl class="project-facts">
+            <div><dt>取り組み</dt><dd>前処理・特徴量検討・モデル作成</dd></div>
+            <div><dt>成果物</dt><dd>分析Notebook・発表資料・想定質問</dd></div>
+            <div><dt>学び</dt><dd>分析結果を根拠とともに説明する力</dd></div>
           </dl>
+          <div class="project-links">
+            <a class="button button-dark" href="./j-league/Jリーグコンペ発表資料.pptx" target="_blank" rel="noopener noreferrer">発表資料 <span>↗</span></a>
+            <a class="text-link" href="./j-league/j_league.ipynb" target="_blank" rel="noopener noreferrer">Notebookを見る <span>↗</span></a>
+          </div>
+        </div>
+      </article>
+
+      <article class="wide-project-card section-reveal">
+        <div class="document-visual" aria-hidden="true">
+          <p>PLANNING / DOCUMENTATION</p>
+          <div class="document-sheet">
+            <span>PROJECT PROPOSAL</span>
+            <strong>企画を、伝わる資料へ。</strong>
+            <i></i><i></i><i></i>
+            <div><b>PLAN</b><b>PRESENT</b><b>DOCUMENT</b></div>
+          </div>
+        </div>
+        <div class="project-content">
+          <div class="project-topline"><span class="project-number">02</span><span class="status-badge">GROUP PROJECT</span></div>
+          <p class="project-type">Planning / Documentation</p>
+          <h3>企業企画・会社設立<br>ドキュメント制作</h3>
+          <p class="project-description">企業概要、事業企画、プレゼン資料、株式会社定款をグループで制作。情報を整理し、第三者に伝わる資料へまとめました。</p>
+          <dl class="project-facts">
+            <div><dt>取り組み</dt><dd>事業内容の整理・企画立案・資料作成</dd></div>
+            <div><dt>成果物</dt><dd>プレゼン資料・企画書・株式会社定款</dd></div>
+            <div><dt>学び</dt><dd>チームで認識を揃え、文章と図で伝える力</dd></div>
+          </dl>
+          <ul class="tag-list"><li>Planning</li><li>Team Work</li><li>Presentation</li></ul>
+          <a class="card-link" href="./group-project.html">資料閲覧ページへ <span>→</span></a>
+        </div>
+      </article>
+
+      <div class="group-process section-reveal">
+        <p class="group-process-title">共同制作で大切にしたこと</p>
+        <div class="team-flow">
+          <article><span>01</span><div class="team-icon">?</div><h3>課題を整理する</h3><p>目的と必要な成果物を確認し、取り組む内容をチームで揃える。</p></article>
+          <span class="team-arrow" aria-hidden="true">→</span>
+          <article><span>02</span><div class="team-icon">&lt;/&gt;</div><h3>役割を進める</h3><p>分析・資料作成などの担当を進め、途中の結果をこまめに共有する。</p></article>
+          <span class="team-arrow" aria-hidden="true">→</span>
+          <article><span>03</span><div class="team-icon">↗</div><h3>伝わる形にする</h3><p>根拠と結論を整理し、発表資料やドキュメントとして仕上げる。</p></article>
         </div>
       </div>
     </section>
 
-    <section id="works" class="section section-reveal">
-      <p class="section-label">Works</p>
-      <h2>制作物</h2>
-
-      <div class="work-category">
-        <div class="category-heading">
-          <p class="work-type">Personal Development</p>
-          <h3>個人開発</h3>
+    <section id="personal-works" class="section section-soft">
+      <div class="container">
+        <div class="section-heading section-reveal">
+          <div>
+            <p class="section-label"><span>03</span> Personal Development</p>
+            <h2>自分で考え、実装した制作。</h2>
+          </div>
+          <p>身近な不便をテーマに、必要な機能を整理し、データの取り込みから可視化まで実装しました。</p>
         </div>
-        <div class="works-list">
-          <article class="work-item">
-            <span class="work-number">01</span>
-            <div>
-              <p class="work-type">Personal Project</p>
-              <h3>家計簿アプリ</h3>
-              <p>PayPayの利用履歴をCSVで読み込み、カテゴリごとに支出を自動分類できるようにした家計簿アプリです。グラフで支出傾向を見やすくし、日々の支出を振り返りやすい形にしました。</p>
-              <dl class="work-meta">
-                <div><dt>担当範囲</dt><dd>CSV読み込み、カテゴリ分類、画面表示の実装</dd></div>
-                <div><dt>工夫した点</dt><dd>支出傾向を把握しやすいように、分類結果をグラフで確認できる構成にしました。</dd></div>
-                <div><dt>制作目的</dt><dd>手入力の負担を減らし、決済履歴を学習・分析に活用すること</dd></div>
-              </dl>
-            </div>
-            <ul class="chips"><li>Python</li><li>CSV</li><li>JavaScript</li></ul>
-          </article>
 
-          <article class="work-item">
-            <span class="work-number">02</span>
-            <div>
-              <p class="work-type">Learning Project</p>
-              <h3>AWS設計学習メモ</h3>
-              <p>AWS SAAの学習内容をもとに、VPC、IAM、S3、EC2などのサービスを整理し、構成パターンや設計上の注意点をまとめています。</p>
-              <dl class="work-meta">
-                <div><dt>目的</dt><dd>クラウド設計の考え方を理解し、説明できる状態にすること</dd></div>
-                <div><dt>学習中</dt><dd>可用性、セキュリティ、コストを意識したAWS構成</dd></div>
-              </dl>
-            </div>
-            <ul class="chips"><li>AWS</li><li>SAA</li><li>Cloud Design</li></ul>
-          </article>
-        </div>
-      </div>
+        <article class="featured-project personal-project section-reveal">
+          <div class="project-content">
+            <div class="project-topline"><span class="project-number">01</span><span class="status-badge status-personal">PERSONAL PROJECT</span></div>
+            <p class="project-type">Application Development</p>
+            <h3>家計簿アプリ</h3>
+            <p class="project-description">PayPayの利用履歴をCSVで読み込み、支出をカテゴリごとに自動分類。グラフで支出傾向を確認できるようにし、日々の振り返りを簡単にしました。</p>
+            <dl class="project-facts">
+              <div><dt>目的</dt><dd>決済履歴の手入力を減らす</dd></div>
+              <div><dt>実装</dt><dd>CSV読み込み・カテゴリ分類・画面表示</dd></div>
+              <div><dt>工夫</dt><dd>分類結果をグラフで分かりやすく可視化</dd></div>
+            </dl>
+            <ul class="tag-list"><li>Python</li><li>CSV</li><li>JavaScript</li></ul>
+          </div>
 
-      <div class="work-category">
-        <div class="category-heading">
-          <p class="work-type">Group Development</p>
-          <h3>グループ開発</h3>
-        </div>
-        <div class="works-list">
-          <article class="work-item">
-            <span class="work-number">03</span>
-            <div>
-              <p class="work-type">Planning / Documentation</p>
-              <h3><a href="./group-project.html">企業企画・会社設立ドキュメント制作</a></h3>
-              <p>グループで企業の概要、事業企画、プレゼン資料、株式会社定款を作成したプロジェクトです。事業内容を整理し、企画書と発表資料に落とし込むことで、チームでの企画立案とドキュメント作成を経験しました。</p>
-              <dl class="work-meta">
-                <div><dt>制作物</dt><dd>企業概要、企画書、プレゼン資料、株式会社定款</dd></div>
-                <div><dt>学んだ点</dt><dd>事業内容、役割分担、必要書類を整理し、第三者に伝わる資料へまとめること</dd></div>
-                <div><dt>掲載資料</dt><dd>公開前に個人情報や学校名などの記載確認を推奨</dd></div>
-              </dl>
-              <div class="document-links" aria-label="関連資料">
-                <a href="./group-project.html">資料閲覧ページへ</a>
+          <div class="project-visual budget-visual" aria-hidden="true">
+            <div class="app-window">
+              <div class="app-bar"><span>MY BUDGET / UI SAMPLE</span><i></i></div>
+              <div class="budget-total"><small>今月の支出</small><strong>¥ --,---</strong><span>CSV IMPORTED</span></div>
+              <div class="budget-content">
+                <div class="donut-chart"><span>100<small>%</small></span></div>
+                <div class="budget-categories">
+                  <p><i></i><span>食費</span><b>42%</b></p>
+                  <p><i></i><span>日用品</span><b>28%</b></p>
+                  <p><i></i><span>交通</span><b>18%</b></p>
+                  <p><i></i><span>その他</span><b>12%</b></p>
+                </div>
               </div>
             </div>
-            <ul class="chips"><li>Group Work</li><li>Planning</li><li>Presentation</li></ul>
-          </article>
-        </div>
+          </div>
+        </article>
       </div>
     </section>
 
-    <section id="skills" class="section section-reveal">
-      <p class="section-label">Skills</p>
-      <h2>スキル</h2>
-      <div class="skill-grid">
-        <div class="skill-group">
-          <h3>Cloud</h3>
-          <div class="skill" style="--level: 68%"><span>AWS</span><b></b></div>
-          <div class="skill" style="--level: 55%"><span>Cloud Design</span><b></b></div>
-          <div class="skill" style="--level: 62%"><span>AWS SAA Study</span><b></b></div>
+    <section id="skills" class="section container">
+      <div class="section-heading section-reveal">
+        <div>
+          <p class="section-label"><span>04</span> Skills &amp; Certifications</p>
+          <h2>学んだ技術を、制作で試す。</h2>
         </div>
-        <div class="skill-group">
-          <h3>Programming</h3>
-          <div class="skill" style="--level: 66%"><span>Python</span><b></b></div>
-          <div class="skill" style="--level: 58%"><span>JavaScript</span><b></b></div>
-          <div class="skill" style="--level: 64%"><span>HTML / CSS</span><b></b></div>
-        </div>
-        <div class="skill-group">
-          <h3>Tools</h3>
-          <div class="skill" style="--level: 62%"><span>Git</span><b></b></div>
-          <div class="skill" style="--level: 72%"><span>VS Code</span><b></b></div>
-          <div class="skill" style="--level: 60%"><span>CSV Data Handling</span><b></b></div>
-        </div>
+        <p>数値ではなく、現在扱っている技術と、それをどこで活用したかを掲載しています。</p>
+      </div>
+
+      <div class="skills-grid">
+        <article class="skill-card section-reveal">
+          <div class="skill-card-head"><span>01</span><p>CLOUD</p></div>
+          <h3>AWS / Cloud Design</h3>
+          <p>Web構成の設計学習を通じて、サービスの役割と構成理由を整理しています。</p>
+          <ul class="tag-list"><li>VPC</li><li>EC2</li><li>S3</li><li>RDS</li><li>IAM</li><li>CloudFront</li></ul>
+        </article>
+        <article class="skill-card section-reveal">
+          <div class="skill-card-head"><span>02</span><p>DEVELOPMENT</p></div>
+          <h3>Python / Web</h3>
+          <p>データ分析と家計簿アプリでPythonを使用。Webの基礎としてHTML、CSS、JavaScriptを扱っています。</p>
+          <ul class="tag-list"><li>Python</li><li>pandas</li><li>HTML</li><li>CSS</li><li>JavaScript</li><li>CSV</li></ul>
+        </article>
+        <article class="skill-card section-reveal">
+          <div class="skill-card-head"><span>03</span><p>TEAM &amp; TOOLS</p></div>
+          <h3>Git / Documentation</h3>
+          <p>Gitによる変更管理と、企画書・発表資料の作成を通して共同制作を進めています。</p>
+          <ul class="tag-list"><li>Git</li><li>GitHub</li><li>VS Code</li><li>Planning</li><li>Presentation</li></ul>
+        </article>
+      </div>
+
+      <div class="certifications section-reveal">
+        <div class="cert-heading"><p class="section-label">Certifications</p><h3>資格</h3></div>
+        <div class="cert-list">
+          <article><span class="cert-check">✓</span><div><p>取得済み</p><h4>AWS Certified Cloud Practitioner</h4></div></article>
+          <article><span class="cert-check">✓</span><div><p>取得済み</p><h4>基本情報技術者</h4></div></article>
+          <article><span class="cert-check">✓</span><div><p>取得済み</p><h4>G検定</h4></div></article>
+          <article class="cert-learning"><span class="cert-check">→</span><div><p>学習中</p><h4>AWS Solutions Architect - Associate</h4></div></article>
+          <article class="cert-learning"><span class="cert-check">→</span><div><p>学習中</p><h4>応用情報技術者</h4></div></article>
+      </div>
       </div>
     </section>
 
-    <section id="certifications" class="section section-reveal">
-      <p class="section-label">Certifications</p>
-      <h2>資格・学習中</h2>
-      <div class="cert-list">
-        <article><span>01</span><h3>G検定</h3><p>取得済み</p></article>
-        <article><span>02</span><h3>基本情報技術者</h3><p>取得済み</p></article>
-        <article><span>03</span><h3>AWS Certified Cloud Practitioner</h3><p>取得済み</p></article>
-        <article><span>04</span><h3>AWS Solutions Architect - Associate</h3><p>学習中</p></article>
-      </div>
-    </section>
-
-    <section id="contact" class="section contact section-reveal">
-      <p class="section-label">Contact</p>
-      <h2>連絡先</h2>
-
-      <div class="contact-links">
-        <a class="contact-link" href="mailto:g024c1036@g.neec.ac.jp">g024c1036@g.neec.ac.jp</a>
-        <a class="contact-link" href="https://github.com/Muratayuduki" target="_blank" rel="noopener noreferrer">GitHub</a>
+    <section id="contact" class="contact-section">
+      <div class="container contact-inner section-reveal">
+        <p class="section-label"><span>05</span> Contact</p>
+        <div class="contact-grid">
+          <div><h2>ご覧いただき、<br>ありがとうございます。</h2><p>制作物の詳細や取り組みについて、お気軽にご連絡ください。</p></div>
+          <div class="contact-actions">
+            <a href="mailto:g024c1036@g.neec.ac.jp"><span><small>MAIL</small>g024c1036@g.neec.ac.jp</span><b>↗</b></a>
+            <a href="https://github.com/Muratayuduki" target="_blank" rel="noopener noreferrer"><span><small>GITHUB</small>github.com/Muratayuduki</span><b>↗</b></a>
+          </div>
+        </div>
       </div>
     </section>
   </main>
 
   <footer class="footer">
-    <a href="#top">Back to Top</a>
-    <p>&copy; 2026 Yuzuki Murata Portfolio</p>
+    <div class="container">
+      <p><strong>Yuzuki Murata</strong><span>Cloud Engineer Portfolio</span></p>
+      <p>&copy; 2026 Yuzuki Murata</p>
+      <a href="#top">Back to top ↑</a>
+    </div>
   </footer>
 
   <script src="./script.js"></script>
