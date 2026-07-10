@@ -1,0 +1,6 @@
+project_name        = "gmail-priority-bot"
+aws_region          = "ap-northeast-1"
+environment         = "dev"
+schedule_expression = "rate(30 minutes)"
+lambda_package_path = "../../backend/dist/lambda.zip"
+scheduler_enabled   = false

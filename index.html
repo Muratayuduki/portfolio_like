@@ -29,7 +29,7 @@
         <span>Yuzuki</span>
         <span>Murata</span>
       </h1>
-      <p class="hero-subtitle">AWSを中心に、クラウド設計と実装を学んでいます。</p>
+      <p class="hero-subtitle">クラウドエンジニアを目指し、AWS構成設計・要件定義・Terraformを中心に個人制作へ取り組んでいます。</p>
       <div class="scroll-indicator">
         <span></span>
         Scroll
@@ -44,12 +44,13 @@
           <span>Y</span>
         </div>
         <div class="about-content">
-          <p class="tagline">AWSを中心にクラウド技術の学習を進めています。個人制作やグループ開発を通じて、実務で活かせる設計力と実装力を身につけています。</p>
+          <p class="tagline">クラウド系企業でのエンジニア職を目指し、日常の課題をAWS上の構成として整理する力を伸ばしています。現在は要件定義、構成図作成、Terraformによるリソース設計を中心に、実装へ進めるための土台作りに取り組んでいます。</p>
           <dl class="profile-list">
             <div><dt>Name</dt><dd>村田 悠月</dd></div>
             <div><dt>Role</dt><dd>クラウドエンジニア志望</dd></div>
             <div><dt>School</dt><dd>日本工学院八王子専門学校 情報科学専門課程 ITスペシャリスト科 在学 / 2028年卒業見込み</dd></div>
-            <div><dt>Focus</dt><dd>AWS, Python, Git, JavaScript</dd></div>
+            <div><dt>Target</dt><dd>クラウド系企業 / AWSを活用する自社サービス・運用支援企業</dd></div>
+            <div><dt>Focus</dt><dd>AWS設計, 要件定義, 構成図, Terraform, Python, Gmail API</dd></div>
             <div><dt>GitHub</dt><dd><a href="https://github.com/Muratayuduki" target="_blank" rel="noopener noreferrer">github.com/Muratayuduki</a></dd></div>
           </dl>
         </div>
@@ -69,30 +70,45 @@
           <article class="work-item">
             <span class="work-number">01</span>
             <div>
-              <p class="work-type">Personal Project</p>
-              <h3>家計簿アプリ</h3>
-              <p>PayPayの利用履歴をCSVで読み込み、カテゴリごとに支出を自動分類できるようにした家計簿アプリです。グラフで支出傾向を見やすくし、日々の支出を振り返りやすい形にしました。</p>
+              <p class="work-type">Cloud Web Application</p>
+              <h3><a href="./spendops.html">SpendOps Dashboard</a></h3>
+              <p class="work-status">Status: 要件定義・AWS構成図作成済み / 実装準備中</p>
+              <p>日常支出とAWS利用料金をまとめて可視化し、月別の支出傾向を分析するWebアプリです。PayPayはCSVアップロード、JCBカードと横浜銀行はGmail + GAS、AWS料金はCost Explorer APIで取り込み、DynamoDBに保存する構成を設計しています。</p>
               <dl class="work-meta">
-                <div><dt>担当範囲</dt><dd>CSV読み込み、カテゴリ分類、画面表示の実装</dd></div>
-                <div><dt>工夫した点</dt><dd>支出傾向を把握しやすいように、分類結果をグラフで確認できる構成にしました。</dd></div>
-                <div><dt>制作目的</dt><dd>手入力の負担を減らし、決済履歴を学習・分析に活用すること</dd></div>
+                <div><dt>目的</dt><dd>単なる記録ツールではなく、準自動で集計し、月次分析・カテゴリ分析・改善提案を深く行える支出分析ダッシュボードを作ること。</dd></div>
+                <div><dt>構成</dt><dd>Next.js、Tailwind CSS、AWS Lambda、API Gateway、Cognito、DynamoDB、S3、GAS、Cost Explorer APIを想定。</dd></div>
+                <div><dt>工夫</dt><dd>PayPayのメール自動取得が安定しない前提を受け入れ、CSV取込履歴、未取込警告、重複判定、個人情報を保存しない設計に切り替えました。</dd></div>
+                <div><dt>担当範囲</dt><dd>作りたい機能、要件、AWS構成方針を自分で整理し、AIを壁打ち相手として文章化・構成図化しました。</dd></div>
+                <div><dt>公開予定</dt><dd>完成後に概要資料、構成図、必要に応じてTerraformコードを公開予定です。</dd></div>
               </dl>
+              <div class="document-links" aria-label="SpendOps Dashboard の成果物">
+                <a href="./spendops.html">概要資料を見る</a>
+                <a href="./projects/spendops/spendops_aws_architecture.drawio" target="_blank" rel="noopener noreferrer">構成図を開く</a>
+              </div>
             </div>
-            <ul class="chips"><li>Python</li><li>CSV</li><li>JavaScript</li></ul>
+            <ul class="chips"><li>AWS</li><li>Next.js</li><li>DynamoDB</li><li>GAS</li></ul>
           </article>
 
           <article class="work-item">
             <span class="work-number">02</span>
             <div>
-              <p class="work-type">Learning Project</p>
-              <h3>AWS設計学習メモ</h3>
-              <p>AWS SAAの学習内容をもとに、VPC、IAM、S3、EC2などのサービスを整理し、構成パターンや設計上の注意点をまとめています。</p>
+              <p class="work-type">Serverless Automation</p>
+              <h3><a href="./gmail-priority-bot.html">Gmail Priority Bot</a></h3>
+              <p class="work-status">Status: 要件定義・構成設計・Terraformでのリソース作成確認済み</p>
+              <p>就活・インターン関連のGmailを定期的に取得し、重要度とカテゴリを分類してGmailラベルを付与し、結果をダッシュボードで確認するMVPです。破壊的なメール操作を行わず、最小限のメタデータだけを扱う方針で設計しています。</p>
               <dl class="work-meta">
-                <div><dt>目的</dt><dd>クラウド設計の考え方を理解し、説明できる状態にすること</dd></div>
-                <div><dt>学習中</dt><dd>可用性、セキュリティ、コストを意識したAWS構成</dd></div>
+                <div><dt>目的</dt><dd>スカウト通知、レポート、広告などに埋もれやすい重要メールを、手作業に頼らず見つけやすくすること。</dd></div>
+                <div><dt>構成</dt><dd>EventBridge Scheduler、Lambda、Gmail API、DynamoDB、CloudWatch Logs、API Gateway、フロントエンドダッシュボード、Terraformを想定。</dd></div>
+                <div><dt>方針</dt><dd>機械学習やLLMは初期版では使わず、理由を説明できる決定的ルールで High / Medium / Low / Unknown に分類します。</dd></div>
+                <div><dt>担当範囲</dt><dd>要件定義、AWS構成、Terraformで作成するリソースの整理を担当。自分の意図をAIに伝え、文章と設計資料へ落とし込みました。</dd></div>
+                <div><dt>公開予定</dt><dd>面接時に必要に応じて概要資料、構成図、Terraformコードを提示できるよう準備中です。</dd></div>
               </dl>
+              <div class="document-links" aria-label="Gmail Priority Bot の成果物">
+                <a href="./gmail-priority-bot.html">概要資料を見る</a>
+                <a href="./projects/gmail-priority-bot/terraform/main.tf" target="_blank" rel="noopener noreferrer">Terraformを見る</a>
+              </div>
             </div>
-            <ul class="chips"><li>AWS</li><li>SAA</li><li>Cloud Design</li></ul>
+            <ul class="chips"><li>Python</li><li>Gmail API</li><li>Lambda</li><li>Terraform</li></ul>
           </article>
         </div>
       </div>
@@ -108,11 +124,11 @@
             <div>
               <p class="work-type">Planning / Documentation</p>
               <h3><a href="./group-project.html">企業企画・会社設立ドキュメント制作</a></h3>
-              <p>グループで企業の概要、事業企画、プレゼン資料、株式会社定款を作成したプロジェクトです。事業内容を整理し、企画書と発表資料に落とし込むことで、チームでの企画立案とドキュメント作成を経験しました。</p>
+              <p>グループで企業の概要、事業企画、プレゼン資料、株式会社定款を作成したプロジェクトです。事業内容を整理し、企画書と発表資料に落とし込むことで、チームでの企画立案とドキュメント制作を経験しました。</p>
               <dl class="work-meta">
                 <div><dt>制作物</dt><dd>企業概要、企画書、プレゼン資料、株式会社定款</dd></div>
-                <div><dt>学んだ点</dt><dd>事業内容、役割分担、必要書類を整理し、第三者に伝わる資料へまとめること</dd></div>
-                <div><dt>掲載資料</dt><dd>公開前に個人情報や学校名などの記載確認を推奨</dd></div>
+                <div><dt>学んだ点</dt><dd>事業内容、役割分担、必要書類を整理し、第三者に伝わる資料へまとめること。</dd></div>
+                <div><dt>掲載資料</dt><dd>公開前に個人情報や学校名などの記載確認を推奨。</dd></div>
               </dl>
               <div class="document-links" aria-label="関連資料">
                 <a href="./group-project.html">資料閲覧ページへ</a>
@@ -131,32 +147,33 @@
         <div class="skill-group">
           <h3>Cloud</h3>
           <div class="skill" style="--level: 68%"><span>AWS</span><b></b></div>
-          <div class="skill" style="--level: 55%"><span>Cloud Design</span><b></b></div>
-          <div class="skill" style="--level: 62%"><span>AWS SAA Study</span><b></b></div>
+          <div class="skill" style="--level: 55%"><span>Serverless Design</span><b></b></div>
+          <div class="skill" style="--level: 50%"><span>Terraform</span><b></b></div>
         </div>
         <div class="skill-group">
           <h3>Programming</h3>
           <div class="skill" style="--level: 66%"><span>Python</span><b></b></div>
-          <div class="skill" style="--level: 58%"><span>JavaScript</span><b></b></div>
+          <div class="skill" style="--level: 58%"><span>JavaScript / TypeScript</span><b></b></div>
           <div class="skill" style="--level: 64%"><span>HTML / CSS</span><b></b></div>
         </div>
         <div class="skill-group">
-          <h3>Tools</h3>
+          <h3>Tools / API</h3>
           <div class="skill" style="--level: 62%"><span>Git</span><b></b></div>
-          <div class="skill" style="--level: 72%"><span>VS Code</span><b></b></div>
-          <div class="skill" style="--level: 60%"><span>CSV Data Handling</span><b></b></div>
+          <div class="skill" style="--level: 58%"><span>Gmail API</span><b></b></div>
+          <div class="skill" style="--level: 60%"><span>DynamoDB Design</span><b></b></div>
         </div>
       </div>
     </section>
 
     <section id="certifications" class="section section-reveal">
       <p class="section-label">Certifications</p>
-      <h2>資格・学習中</h2>
+      <h2>資格</h2>
       <div class="cert-list">
         <article><span>01</span><h3>G検定</h3><p>取得済み</p></article>
         <article><span>02</span><h3>基本情報技術者</h3><p>取得済み</p></article>
         <article><span>03</span><h3>AWS Certified Cloud Practitioner</h3><p>取得済み</p></article>
         <article><span>04</span><h3>AWS Solutions Architect - Associate</h3><p>学習中</p></article>
+        <article><span>05</span><h3>応用情報技術者</h3><p>学習中</p></article>
       </div>
     </section>
 

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SpendOps Dashboard | Yuzuki Murata Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Noto+Serif+JP:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <a class="logo" href="./index.html#top">Yuzuki Murata</a>
+    <nav class="nav">
+      <a href="./index.html#works">Works</a>
+      <a href="#overview">Overview</a>
+      <a href="#artifacts">Artifacts</a>
+      <a href="#architecture">Architecture</a>
+    </nav>
+    <a class="menu-button" href="./index.html#works">Back</a>
+  </header>
+
+  <main>
+    <section class="project-hero section-reveal">
+      <p class="eyebrow">Personal Development / Cloud Design</p>
+      <h1>SpendOps Dashboard</h1>
+      <p>日常支出とAWS利用料金をまとめて可視化する、支出分析ダッシュボードの要件定義・AWS構成案です。</p>
+      <div class="project-actions">
+        <a href="#overview">概要</a>
+        <a href="#artifacts">成果物</a>
+        <a href="./projects/spendops/spendops_aws_architecture.drawio" target="_blank" rel="noopener noreferrer">構成図ファイル</a>
+      </div>
+    </section>
+
+    <section class="section document-section section-reveal" id="overview">
+      <p class="section-label">Overview</p>
+      <h2>制作背景</h2>
+      <div class="project-summary">
+        <p>複数の決済手段やAWS利用料金を別々に確認する負担を減らすため、月別の支出傾向をまとめて確認できる仕組みを設計しました。</p>
+        <p>PayPayはメールから店舗名や支出情報を安定取得しにくいため、CSVアップロード方式に切り替え、JCBカードと横浜銀行はGmail + GASで取得する方針にしています。</p>
+      </div>
+      <dl class="work-meta project-meta">
+        <div><dt>現状</dt><dd>要件定義、主要機能整理、AWS構成図作成まで完了。実装は準備中です。</dd></div>
+        <div><dt>担当範囲</dt><dd>実現したい機能、入力データ、AWS構成方針、セキュリティ配慮を整理し、AIを使って文章化・構成図化しました。</dd></div>
+        <div><dt>評価してほしい点</dt><dd>不確実な自動取得に固執せず、CSV取込と分析重視へ設計を切り替えた判断です。</dd></div>
+      </dl>
+    </section>
+
+    <section class="section document-section section-reveal" id="artifacts">
+      <p class="section-label">Artifacts</p>
+      <h2>確認できる成果物</h2>
+      <div class="artifact-list">
+        <a href="./projects/spendops/spendops_aws_architecture.drawio" target="_blank" rel="noopener noreferrer">
+          <span>01</span>
+          <strong>AWS構成図</strong>
+          <small>draw.io形式。CloudFront、API Gateway、Lambda、DynamoDB、S3、Cognito、GAS連携の構成案。</small>
+        </a>
+      </div>
+    </section>
+
+    <section class="section document-section section-reveal" id="architecture">
+      <p class="section-label">Architecture</p>
+      <h2>構成メモ</h2>
+      <pre class="code-block"><code>PayPay CSV
+  -> Browser Upload
+  -> API Gateway
+  -> Lambda CSV Import
+  -> S3 / DynamoDB
+
+JCB / 横浜銀行 通知メール
+  -> 専用Gmail
+  -> GAS
+  -> API Gateway
+  -> Lambda Mail Import
+  -> DynamoDB
+
+AWS料金
+  -> EventBridge
+  -> Lambda
+  -> Cost Explorer API
+  -> DynamoDB</code></pre>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <a href="./index.html#works">Back to Works</a>
+    <p>&copy; 2026 Yuzuki Murata Portfolio</p>
+  </footer>
+
+  <script src="./script.js"></script>
+</body>
+</html>
