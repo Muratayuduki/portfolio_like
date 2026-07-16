@@ -3,194 +3,199 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Yuzuki Murata Portfolio</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Noto+Serif+JP:wght@400;500;700&display=swap" rel="stylesheet">
+  <meta name="description" content="村田悠月のポートフォリオ。AWSを使った個人制作、チーム制作、スキル、取得資格を紹介します。" />
+  <title>村田 悠月 | ポートフォリオ</title>
   <link rel="stylesheet" href="./style.css" />
 </head>
 <body>
   <header class="site-header">
-    <a class="logo" href="#top">Yuzuki Murata</a>
-    <nav class="nav">
-      <a href="#about">About</a>
-      <a href="#works">Works</a>
-      <a href="#skills">Skills</a>
-      <a href="#certifications">Certifications</a>
-      <a href="#contact">Contact</a>
+    <a class="logo" href="#top" aria-label="ページ上部へ戻る">村田 悠月</a>
+    <nav class="nav" id="site-nav" aria-label="メインナビゲーション">
+      <a href="#profile">プロフィール</a>
+      <a href="#personal-works">個人制作</a>
+      <a href="#group-work">チーム制作</a>
+      <a href="#skills">スキル</a>
+      <a href="#certifications">資格</a>
+      <a href="#contact">連絡先</a>
     </nav>
-    <button class="menu-button" type="button" aria-label="メニューを開く">Menu</button>
+    <button class="menu-button" type="button" aria-label="メニューを開く" aria-controls="site-nav" aria-expanded="false">メニュー</button>
   </header>
 
   <main id="top">
-    <section class="hero section-reveal">
-      <p class="eyebrow">Portfolio / Cloud Engineering</p>
-      <h1 class="hero-title">
-        <span>Yuzuki</span>
-        <span>Murata</span>
-      </h1>
-      <p class="hero-subtitle">クラウドエンジニアを目指し、AWS構成設計・要件定義・Terraformを中心に個人制作へ取り組んでいます。</p>
-      <div class="scroll-indicator">
-        <span></span>
-        Scroll
+    <h1 class="visually-hidden">村田悠月のポートフォリオ</h1>
+
+    <section class="intro section-reveal" aria-label="自己紹介">
+      <div class="intro-copy">
+        <p class="intro-lead">課題を整理し、AWSを使った仕組みとして形にする力を身につけています。</p>
+        <p>AWSのサーバーレス構成、Terraform、Pythonを中心に、要件定義から画面・インフラ設計、実装まで取り組んでいます。</p>
       </div>
     </section>
 
-    <section id="about" class="section section-reveal">
-      <p class="section-label">About</p>
-      <h2>プロフィール</h2>
-      <div class="about-card">
-        <div class="avatar">
-          <span>Y</span>
-        </div>
-        <div class="about-content">
-          <p class="tagline">クラウド系企業でのエンジニア職を目指し、日常の課題をAWS上の構成として整理する力を伸ばしています。現在は要件定義、構成図作成、Terraformによるリソース設計を中心に、実装へ進めるための土台作りに取り組んでいます。</p>
-          <dl class="profile-list">
-            <div><dt>Name</dt><dd>村田 悠月</dd></div>
-            <div><dt>Role</dt><dd>クラウドエンジニア志望</dd></div>
-            <div><dt>School</dt><dd>日本工学院八王子専門学校 情報科学専門課程 ITスペシャリスト科 在学 / 2028年卒業見込み</dd></div>
-            <div><dt>Target</dt><dd>クラウド系企業 / AWSを活用する自社サービス・運用支援企業</dd></div>
-            <div><dt>Focus</dt><dd>AWS設計, 要件定義, 構成図, Terraform, Python, Gmail API</dd></div>
-            <div><dt>GitHub</dt><dd><a href="https://github.com/Muratayuduki" target="_blank" rel="noopener noreferrer">github.com/Muratayuduki</a></dd></div>
-          </dl>
-        </div>
+    <section id="profile" class="section section-reveal">
+      <div class="section-heading">
+        <h2>プロフィール</h2>
+      </div>
+      <div class="profile-layout">
+        <p class="profile-statement">クラウドを使って、日常や業務の中にある手間を減らす仕組みを作りたいと考えています。現在は、機能を増やすことだけでなく、個人情報を必要以上に保存しない設計、失敗時の挙動、運用時の確認方法まで含めて考える練習を重ねています。</p>
+        <dl class="profile-details">
+          <div><dt>氏名</dt><dd>村田 悠月</dd></div>
+          <div><dt>在籍</dt><dd>日本工学院八王子専門学校 情報科学専門課程 ITスペシャリスト科</dd></div>
+          <div><dt>卒業予定</dt><dd>2028年3月</dd></div>
+          <div><dt>得意分野</dt><dd>要件整理、AWS構成設計、Terraform、Python</dd></div>
+          <div><dt>関心分野</dt><dd>クラウド基盤、サーバーレス、データ連携、自動化</dd></div>
+          <div><dt>GitHub</dt><dd><a class="text-link" href="https://github.com/Muratayuduki" target="_blank" rel="noopener noreferrer">github.com/Muratayuduki</a></dd></div>
+        </dl>
       </div>
     </section>
 
-    <section id="works" class="section section-reveal">
-      <p class="section-label">Works</p>
-      <h2>制作物</h2>
-
-      <div class="work-category">
-        <div class="category-heading">
-          <p class="work-type">Personal Development</p>
-          <h3>個人開発</h3>
-        </div>
-        <div class="works-list">
-          <article class="work-item">
-            <span class="work-number">01</span>
-            <div>
-              <p class="work-type">Cloud Web Application</p>
-              <h3><a href="./spendops.html">SpendOps Dashboard</a></h3>
-              <p class="work-status">Status: 要件定義・AWS構成図作成済み / 実装準備中</p>
-              <p>日常支出とAWS利用料金をまとめて可視化し、月別の支出傾向を分析するWebアプリです。PayPayはCSVアップロード、JCBカードと横浜銀行はGmail + GAS、AWS料金はCost Explorer APIで取り込み、DynamoDBに保存する構成を設計しています。</p>
-              <dl class="work-meta">
-                <div><dt>目的</dt><dd>単なる記録ツールではなく、準自動で集計し、月次分析・カテゴリ分析・改善提案を深く行える支出分析ダッシュボードを作ること。</dd></div>
-                <div><dt>構成</dt><dd>Next.js、Tailwind CSS、AWS Lambda、API Gateway、Cognito、DynamoDB、S3、GAS、Cost Explorer APIを想定。</dd></div>
-                <div><dt>工夫</dt><dd>PayPayのメール自動取得が安定しない前提を受け入れ、CSV取込履歴、未取込警告、重複判定、個人情報を保存しない設計に切り替えました。</dd></div>
-                <div><dt>担当範囲</dt><dd>作りたい機能、要件、AWS構成方針を自分で整理し、AIを壁打ち相手として文章化・構成図化しました。</dd></div>
-                <div><dt>公開予定</dt><dd>完成後に概要資料、構成図、必要に応じてTerraformコードを公開予定です。</dd></div>
-              </dl>
-              <div class="document-links" aria-label="SpendOps Dashboard の成果物">
-                <a href="./spendops.html">概要資料を見る</a>
-                <a href="./projects/spendops/spendops_aws_architecture.drawio" target="_blank" rel="noopener noreferrer">構成図を開く</a>
-              </div>
-            </div>
-            <ul class="chips"><li>AWS</li><li>Next.js</li><li>DynamoDB</li><li>GAS</li></ul>
-          </article>
-
-          <article class="work-item">
-            <span class="work-number">02</span>
-            <div>
-              <p class="work-type">Serverless Automation</p>
-              <h3><a href="./gmail-priority-bot.html">Gmail Priority Bot</a></h3>
-              <p class="work-status">Status: 要件定義・構成設計・Terraformでのリソース作成確認済み</p>
-              <p>就活・インターン関連のGmailを定期的に取得し、重要度とカテゴリを分類してGmailラベルを付与し、結果をダッシュボードで確認するMVPです。破壊的なメール操作を行わず、最小限のメタデータだけを扱う方針で設計しています。</p>
-              <dl class="work-meta">
-                <div><dt>目的</dt><dd>スカウト通知、レポート、広告などに埋もれやすい重要メールを、手作業に頼らず見つけやすくすること。</dd></div>
-                <div><dt>構成</dt><dd>EventBridge Scheduler、Lambda、Gmail API、DynamoDB、CloudWatch Logs、API Gateway、フロントエンドダッシュボード、Terraformを想定。</dd></div>
-                <div><dt>方針</dt><dd>機械学習やLLMは初期版では使わず、理由を説明できる決定的ルールで High / Medium / Low / Unknown に分類します。</dd></div>
-                <div><dt>担当範囲</dt><dd>要件定義、AWS構成、Terraformで作成するリソースの整理を担当。自分の意図をAIに伝え、文章と設計資料へ落とし込みました。</dd></div>
-                <div><dt>公開予定</dt><dd>面接時に必要に応じて概要資料、構成図、Terraformコードを提示できるよう準備中です。</dd></div>
-              </dl>
-              <div class="document-links" aria-label="Gmail Priority Bot の成果物">
-                <a href="./gmail-priority-bot.html">概要資料を見る</a>
-                <a href="./projects/gmail-priority-bot/terraform/main.tf" target="_blank" rel="noopener noreferrer">Terraformを見る</a>
-              </div>
-            </div>
-            <ul class="chips"><li>Python</li><li>Gmail API</li><li>Lambda</li><li>Terraform</li></ul>
-          </article>
-        </div>
+    <section id="personal-works" class="section section-reveal">
+      <div class="section-heading">
+        <h2>個人制作</h2>
       </div>
 
-      <div class="work-category">
-        <div class="category-heading">
-          <p class="work-type">Group Development</p>
-          <h3>グループ開発</h3>
-        </div>
-        <div class="works-list">
-          <article class="work-item">
-            <span class="work-number">03</span>
-            <div>
-              <p class="work-type">Planning / Documentation</p>
-              <h3><a href="./group-project.html">企業企画・会社設立ドキュメント制作</a></h3>
-              <p>グループで企業の概要、事業企画、プレゼン資料、株式会社定款を作成したプロジェクトです。事業内容を整理し、企画書と発表資料に落とし込むことで、チームでの企画立案とドキュメント制作を経験しました。</p>
-              <dl class="work-meta">
-                <div><dt>制作物</dt><dd>企業概要、企画書、プレゼン資料、株式会社定款</dd></div>
-                <div><dt>学んだ点</dt><dd>事業内容、役割分担、必要書類を整理し、第三者に伝わる資料へまとめること。</dd></div>
-                <div><dt>掲載資料</dt><dd>公開前に個人情報や学校名などの記載確認を推奨。</dd></div>
-              </dl>
-              <div class="document-links" aria-label="関連資料">
-                <a href="./group-project.html">資料閲覧ページへ</a>
+      <div class="works-showcase">
+        <article class="work-showcase-card">
+          <a class="work-showcase-link" href="./gmail-priority-bot.html" aria-label="Gmail Priority Botの詳細を見る">
+            <div class="work-preview work-preview-gmail" aria-hidden="true">
+              <div class="preview-window">
+                <div class="preview-header"><i></i><i></i><i></i><b>Gmail Priority Bot</b></div>
+                <div class="preview-stats"><span></span><span></span><span></span><span></span></div>
+                <div class="preview-workspace">
+                  <div class="preview-sidebar"><span></span><span></span><span></span></div>
+                  <div class="preview-mail-list"><span></span><span></span><span></span><span></span></div>
+                  <div class="preview-detail"><b></b><span></span><span></span><span></span></div>
+                </div>
               </div>
             </div>
-            <ul class="chips"><li>Group Work</li><li>Planning</li><li>Presentation</li></ul>
-          </article>
-        </div>
+            <div class="work-showcase-shade"></div>
+            <div class="work-showcase-content">
+              <div class="work-showcase-top"><span>01</span><span>個人制作</span></div>
+              <div class="work-showcase-main">
+                <p>メール分類・業務自動化</p>
+                <h3>Gmail Priority Bot</h3>
+                <ul><li>Python</li><li>React</li><li>AWS</li><li>Terraform</li></ul>
+              </div>
+              <div class="work-showcase-bottom"><span>開発中</span><span class="work-arrow" aria-hidden="true">↗</span></div>
+            </div>
+          </a>
+        </article>
+
+        <article class="work-showcase-card">
+          <a class="work-showcase-link" href="./spendops.html" aria-label="SpendOps Dashboardの詳細を見る">
+            <div class="work-preview work-preview-spendops" aria-hidden="true">
+              <div class="preview-window">
+                <div class="preview-header"><i></i><i></i><i></i><b>SpendOps Dashboard</b></div>
+                <div class="spendops-shell">
+                  <div class="spendops-nav"><strong></strong><span></span><span></span><span></span><span></span></div>
+                  <div class="spendops-main">
+                    <div class="spendops-title"><b></b><span></span></div>
+                    <div class="spendops-metrics"><span></span><span></span><span></span></div>
+                    <div class="spendops-panels"><div><i></i><i></i><i></i><i></i></div><div><span></span><span></span><span></span></div></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="work-showcase-shade"></div>
+            <div class="work-showcase-content">
+              <div class="work-showcase-top"><span>02</span><span>個人制作</span></div>
+              <div class="work-showcase-main">
+                <p>収支データ・比較分析</p>
+                <h3>SpendOps Dashboard</h3>
+                <ul><li>Next.js</li><li>Python</li><li>Cognito</li><li>DynamoDB</li></ul>
+              </div>
+              <div class="work-showcase-bottom"><span>設計完了・実装準備中</span><span class="work-arrow" aria-hidden="true">↗</span></div>
+            </div>
+          </a>
+        </article>
       </div>
+    </section>
+
+    <section id="group-work" class="section section-reveal">
+      <div class="section-heading">
+        <h2>チーム制作</h2>
+      </div>
+      <article class="work-showcase-card work-showcase-card-wide">
+        <a class="work-showcase-link" href="./group-project.html" aria-label="企業企画・会社設立ドキュメント制作の詳細を見る">
+          <div class="work-preview work-preview-documents" aria-hidden="true">
+            <div class="document-preview"><span>企画書</span><b>事業内容と計画</b><i></i><i></i><i></i></div>
+            <div class="document-preview"><span>発表資料</span><b>企業企画</b><i></i><i></i><i></i></div>
+            <div class="document-preview"><span>株式会社定款</span><b>会社設立</b><i></i><i></i><i></i></div>
+          </div>
+          <div class="work-showcase-shade"></div>
+          <div class="work-showcase-content">
+            <div class="work-showcase-top"><span>03</span><span>チーム制作</span></div>
+            <div class="work-showcase-main">
+              <p>企画・ドキュメント制作</p>
+              <h3>企業企画・会社設立ドキュメント制作</h3>
+              <ul><li>企画書</li><li>プレゼン資料</li><li>株式会社定款</li></ul>
+            </div>
+            <div class="work-showcase-bottom"><span>チーム制作</span><span class="work-arrow" aria-hidden="true">↗</span></div>
+          </div>
+        </a>
+      </article>
     </section>
 
     <section id="skills" class="section section-reveal">
-      <p class="section-label">Skills</p>
-      <h2>スキル</h2>
+      <div class="section-heading">
+        <h2>スキル</h2>
+      </div>
       <div class="skill-grid">
-        <div class="skill-group">
-          <h3>Cloud</h3>
-          <div class="skill" style="--level: 68%"><span>AWS</span><b></b></div>
-          <div class="skill" style="--level: 55%"><span>Serverless Design</span><b></b></div>
-          <div class="skill" style="--level: 50%"><span>Terraform</span><b></b></div>
-        </div>
-        <div class="skill-group">
-          <h3>Programming</h3>
-          <div class="skill" style="--level: 66%"><span>Python</span><b></b></div>
-          <div class="skill" style="--level: 58%"><span>JavaScript / TypeScript</span><b></b></div>
-          <div class="skill" style="--level: 64%"><span>HTML / CSS</span><b></b></div>
-        </div>
-        <div class="skill-group">
-          <h3>Tools / API</h3>
-          <div class="skill" style="--level: 62%"><span>Git</span><b></b></div>
-          <div class="skill" style="--level: 58%"><span>Gmail API</span><b></b></div>
-          <div class="skill" style="--level: 60%"><span>DynamoDB Design</span><b></b></div>
-        </div>
+        <article>
+          <h3>AWS・インフラ</h3>
+          <p>Lambda、DynamoDB、API Gateway、Cognitoなどを組み合わせたサーバーレス構成を設計し、Terraformで管理しています。</p>
+          <ul class="tag-list"><li>AWS</li><li>Terraform</li><li>CloudWatch</li><li>IAM</li></ul>
+        </article>
+        <article>
+          <h3>開発</h3>
+          <p>PythonでのLambda処理とテスト、Reactを使った確認画面、HTML・CSSによるレスポンシブな画面制作を行っています。</p>
+          <ul class="tag-list"><li>Python</li><li>JavaScript</li><li>TypeScript</li><li>React</li><li>HTML / CSS</li></ul>
+        </article>
+        <article>
+          <h3>設計・連携</h3>
+          <p>利用者の課題から要件を整理し、データモデル、API、セキュリティ方針、画面構成まで一貫して検討します。</p>
+          <ul class="tag-list"><li>要件定義</li><li>Gmail API</li><li>DynamoDB設計</li><li>Git</li></ul>
+        </article>
       </div>
     </section>
 
     <section id="certifications" class="section section-reveal">
-      <p class="section-label">Certifications</p>
-      <h2>資格</h2>
-      <div class="cert-list">
-        <article><span>01</span><h3>G検定</h3><p>取得済み</p></article>
-        <article><span>02</span><h3>基本情報技術者</h3><p>取得済み</p></article>
-        <article><span>03</span><h3>AWS Certified Cloud Practitioner</h3><p>取得済み</p></article>
-        <article><span>04</span><h3>AWS Solutions Architect - Associate</h3><p>学習中</p></article>
-        <article><span>05</span><h3>応用情報技術者</h3><p>学習中</p></article>
+      <div class="section-heading">
+        <h2>資格</h2>
+      </div>
+      <div class="certification-groups">
+        <div>
+          <h3>取得・合格</h3>
+          <ul class="cert-list">
+            <li><span>G検定</span><strong>合格</strong></li>
+            <li><span>基本情報技術者試験</span><strong>合格</strong></li>
+            <li><span>AWS Certified Cloud Practitioner</span><strong>取得</strong></li>
+          </ul>
+        </div>
+        <div>
+          <h3>学習中</h3>
+          <ul class="cert-list">
+            <li><span>AWS Certified Solutions Architect - Associate</span><strong>学習中</strong></li>
+            <li><span>応用情報技術者試験</span><strong>学習中</strong></li>
+          </ul>
+        </div>
       </div>
     </section>
 
     <section id="contact" class="section contact section-reveal">
-      <p class="section-label">Contact</p>
-      <h2>連絡先</h2>
-
+      <div class="section-heading">
+        <h2>連絡先</h2>
+      </div>
+      <p>制作物や掲載内容については、メールまたはGitHubからご確認ください。</p>
       <div class="contact-links">
-        <a class="contact-link" href="mailto:g024c1036@g.neec.ac.jp">g024c1036@g.neec.ac.jp</a>
-        <a class="contact-link" href="https://github.com/Muratayuduki" target="_blank" rel="noopener noreferrer">GitHub</a>
+        <a href="mailto:g024c1036@g.neec.ac.jp">g024c1036@g.neec.ac.jp</a>
+        <a href="https://github.com/Muratayuduki" target="_blank" rel="noopener noreferrer">GitHub</a>
       </div>
     </section>
   </main>
 
   <footer class="footer">
-    <a href="#top">Back to Top</a>
-    <p>&copy; 2026 Yuzuki Murata Portfolio</p>
+    <a href="#top">ページ上部へ</a>
+    <p>&copy; 2026 村田 悠月</p>
   </footer>
 
   <script src="./script.js"></script>
