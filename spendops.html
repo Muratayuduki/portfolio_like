@@ -3,89 +3,159 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>SpendOps Dashboard | Yuzuki Murata Portfolio</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Noto+Serif+JP:wght@400;500;700&display=swap" rel="stylesheet">
+  <meta name="description" content="匿名化した収支データを集団平均と比較するSpendOps Dashboardの要件、画面構成、AWS設計を紹介します。" />
+  <title>SpendOps Dashboard | 村田 悠月</title>
   <link rel="stylesheet" href="./style.css" />
 </head>
 <body>
   <header class="site-header">
-    <a class="logo" href="./index.html#top">Yuzuki Murata</a>
-    <nav class="nav">
-      <a href="./index.html#works">Works</a>
-      <a href="#overview">Overview</a>
-      <a href="#artifacts">Artifacts</a>
-      <a href="#architecture">Architecture</a>
+    <a class="logo" href="./index.html">村田 悠月</a>
+    <nav class="nav" id="site-nav" aria-label="ページ内ナビゲーション">
+      <a href="#overview">概要</a>
+      <a href="#screens">画面構成</a>
+      <a href="#development">開発内容</a>
+      <a href="#resources">成果物</a>
     </nav>
-    <a class="menu-button" href="./index.html#works">Back</a>
+    <a class="header-back" href="./index.html#personal-works">制作一覧へ</a>
   </header>
 
-  <main>
+  <main class="project-main">
     <section class="project-hero section-reveal">
-      <p class="eyebrow">Personal Development / Cloud Design</p>
-      <h1>SpendOps Dashboard</h1>
-      <p>日常支出とAWS利用料金をまとめて可視化する、支出分析ダッシュボードの要件定義・AWS構成案です。</p>
-      <div class="project-actions">
-        <a href="#overview">概要</a>
-        <a href="#artifacts">成果物</a>
-        <a href="./projects/spendops/spendops_aws_architecture.drawio" target="_blank" rel="noopener noreferrer">構成図ファイル</a>
+      <a class="back-link" href="./index.html#personal-works">← 個人制作へ戻る</a>
+      <div class="project-title-row">
+        <div>
+          <h1>SpendOps Dashboard</h1>
+          <p>自分の収支傾向を、匿名化された集団データと比較できる分析サービス</p>
+        </div>
+        <span class="status status-design">設計完了・実装準備中</span>
+      </div>
+      <div class="project-links">
+        <a class="button button-primary" href="https://github.com/Muratayuduki/SpendOps_Dashboard" target="_blank" rel="noopener noreferrer">GitHubで見る</a>
+        <a class="button" href="#screens">画面構成を見る</a>
       </div>
     </section>
 
     <section class="section document-section section-reveal" id="overview">
-      <p class="section-label">Overview</p>
-      <h2>制作背景</h2>
-      <div class="project-summary">
-        <p>複数の決済手段やAWS利用料金を別々に確認する負担を減らすため、月別の支出傾向をまとめて確認できる仕組みを設計しました。</p>
-        <p>PayPayはメールから店舗名や支出情報を安定取得しにくいため、CSVアップロード方式に切り替え、JCBカードと横浜銀行はGmail + GASで取得する方針にしています。</p>
+      <div class="section-heading"><h2>サービス概要</h2></div>
+      <div class="overview-grid">
+        <div class="overview-lead">
+          <p>PayPayやクレジットカードなどの収支CSVを共通形式に変換し、利用者自身の月間支出やカテゴリ別傾向を確認できるWebアプリです。</p>
+          <p>複数人のデータを匿名化して集計し、自分の支出が全体平均と比べてどう違うかを表示します。他人の生明細や氏名、カード番号は共有せず、比較には集計値だけを使います。</p>
+        </div>
+        <dl class="project-info-panel">
+          <div><dt>対象</dt><dd>複数の決済手段を利用し、自分の支出傾向を客観的に把握したい人</dd></div>
+          <div><dt>現在地</dt><dd>複数人向けへの要件更新、主要画面、データ設計、AWS構成図まで作成済み。実装を準備中です。</dd></div>
+          <div><dt>公開URL</dt><dd><a class="text-link" href="https://github.com/Muratayuduki/SpendOps_Dashboard" target="_blank" rel="noopener noreferrer">github.com/Muratayuduki/SpendOps_Dashboard</a></dd></div>
+        </dl>
       </div>
-      <dl class="work-meta project-meta">
-        <div><dt>現状</dt><dd>要件定義、主要機能整理、AWS構成図作成まで完了。実装は準備中です。</dd></div>
-        <div><dt>担当範囲</dt><dd>実現したい機能、入力データ、AWS構成方針、セキュリティ配慮を整理し、AIを使って文章化・構成図化しました。</dd></div>
-        <div><dt>評価してほしい点</dt><dd>不確実な自動取得に固執せず、CSV取込と分析重視へ設計を切り替えた判断です。</dd></div>
-      </dl>
     </section>
 
-    <section class="section document-section section-reveal" id="artifacts">
-      <p class="section-label">Artifacts</p>
-      <h2>確認できる成果物</h2>
-      <div class="artifact-list">
-        <a href="./projects/spendops/spendops_aws_architecture.drawio" target="_blank" rel="noopener noreferrer">
-          <span>01</span>
+    <section class="section document-section section-reveal" id="screens">
+      <div class="section-heading"><h2>画面構成</h2></div>
+      <figure class="screen-map">
+        <div class="screen-lane">
+          <p class="lane-title">一般利用者</p>
+          <div class="screen-flow">
+            <article>
+              <span>01</span>
+              <h3>ログイン</h3>
+              <p>Cognitoで認証し、自分のデータだけにアクセスします。</p>
+            </article>
+            <article>
+              <span>02</span>
+              <h3>CSV取込</h3>
+              <p>PayPay、JCB、VISAなどの形式を判定し、取込結果とエラー行を表示します。</p>
+            </article>
+            <article>
+              <span>03</span>
+              <h3>個人ダッシュボード</h3>
+              <p>月間支出、前月比、カテゴリ別割合、全体平均との差を確認します。</p>
+            </article>
+            <article>
+              <span>04</span>
+              <h3>月次レポート・明細</h3>
+              <p>支出の推移、改善の手掛かり、取込済みの自分の明細を確認します。</p>
+            </article>
+          </div>
+        </div>
+        <div class="screen-lane admin-lane">
+          <p class="lane-title">管理者</p>
+          <div class="screen-flow admin-flow">
+            <article>
+              <span>A</span>
+              <h3>全体集計</h3>
+              <p>匿名化された集計結果と、利用状況を確認します。</p>
+            </article>
+            <article>
+              <span>B</span>
+              <h3>取込状況・エラー</h3>
+              <p>生明細を見ずに、処理件数と原因ファイルを確認します。</p>
+            </article>
+          </div>
+        </div>
+        <figcaption>画面には必要な情報だけを表示し、他人の生明細を横並びで比較しない構成です。</figcaption>
+      </figure>
+    </section>
+
+    <section class="section document-section section-reveal" id="development">
+      <div class="section-heading"><h2>開発内容</h2></div>
+      <div class="detail-grid">
+        <article class="detail-card">
+          <h3>担当範囲</h3>
+          <ul class="plain-list">
+            <li>サービス方針と機能要件の整理</li>
+            <li>一般利用者・管理者の画面設計</li>
+            <li>CSV正規化と重複判定の設計</li>
+            <li>DynamoDBのデータ設計</li>
+            <li>AWS構成と権限制御の設計</li>
+          </ul>
+        </article>
+        <article class="detail-card">
+          <h3>技術スタック</h3>
+          <dl class="stack-list">
+            <div><dt>画面</dt><dd>Next.js / JavaScript / Tailwind CSS</dd></div>
+            <div><dt>処理</dt><dd>Python / AWS Lambda / API Gateway</dd></div>
+            <div><dt>認証</dt><dd>Amazon Cognito</dd></div>
+            <div><dt>データ</dt><dd>DynamoDB / S3一時領域</dd></div>
+            <div><dt>インフラ</dt><dd>CloudFront / Terraform（追加開発予定）</dd></div>
+          </dl>
+        </article>
+        <article class="detail-card">
+          <h3>開発背景</h3>
+          <p>当初は個人用の家計簿と通知メールからの自動取得を検討していました。しかし、取得できる情報の品質が安定しないため、正確なCSVを利用者が任意に取り込む方式へ変更しました。さらに、個人の集計だけでなく、匿名の集団平均との差から支出を振り返れるサービスへ要件を更新しました。</p>
+        </article>
+        <article class="detail-card">
+          <h3>工夫した点</h3>
+          <p>CSV形式の違いを正規化し、一部の行が失敗しても成功した行は集計できる設計です。原本CSVは保存せず、必要最小限の正規化データだけを保持します。管理者にも個人の生明細を見せず、権限と表示内容の両方で個人情報を守ります。</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section document-section section-reveal" id="resources">
+      <div class="section-heading"><h2>成果物</h2></div>
+      <div class="resource-list">
+        <a href="https://github.com/Muratayuduki/SpendOps_Dashboard/blob/main/README.md" target="_blank" rel="noopener noreferrer">
+          <span>最新仕様</span>
+          <strong>README</strong>
+          <small>サービス方針、主要機能、データ設計、完了条件を確認できます。</small>
+        </a>
+        <a href="https://github.com/Muratayuduki/SpendOps_Dashboard/blob/main/drowio/spendops_aws_architecture.drawio" target="_blank" rel="noopener noreferrer">
+          <span>構成資料</span>
           <strong>AWS構成図</strong>
-          <small>draw.io形式。CloudFront、API Gateway、Lambda、DynamoDB、S3、Cognito、GAS連携の構成案。</small>
+          <small>Cognito、API Gateway、Lambda、DynamoDBなどの構成案です。</small>
+        </a>
+        <a href="https://github.com/Muratayuduki/SpendOps_Dashboard/blob/main/notion/spendops_dashboard_notion_plan_with_gantt.md" target="_blank" rel="noopener noreferrer">
+          <span>設計資料</span>
+          <strong>画面・開発計画</strong>
+          <small>画面項目、機能、スケジュールをまとめた資料です。</small>
         </a>
       </div>
-    </section>
-
-    <section class="section document-section section-reveal" id="architecture">
-      <p class="section-label">Architecture</p>
-      <h2>構成メモ</h2>
-      <pre class="code-block"><code>PayPay CSV
-  -> Browser Upload
-  -> API Gateway
-  -> Lambda CSV Import
-  -> S3 / DynamoDB
-
-JCB / 横浜銀行 通知メール
-  -> 専用Gmail
-  -> GAS
-  -> API Gateway
-  -> Lambda Mail Import
-  -> DynamoDB
-
-AWS料金
-  -> EventBridge
-  -> Lambda
-  -> Cost Explorer API
-  -> DynamoDB</code></pre>
     </section>
   </main>
 
   <footer class="footer">
-    <a href="./index.html#works">Back to Works</a>
-    <p>&copy; 2026 Yuzuki Murata Portfolio</p>
+    <a href="./index.html#personal-works">個人制作へ戻る</a>
+    <p>&copy; 2026 村田 悠月</p>
   </footer>
 
   <script src="./script.js"></script>

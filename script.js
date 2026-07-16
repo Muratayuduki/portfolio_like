@@ -1,24 +1,44 @@
-const revealTargets = document.querySelectorAll('.section-reveal');
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach((entry) => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('is-visible');
-    }
-  });
-}, { threshold: 0.16 });
+const revealTargets = document.querySelectorAll(".section-reveal");
 
-revealTargets.forEach((target) => observer.observe(target));
+if ("IntersectionObserver" in window) {
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("is-visible");
+          observer.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.1 },
+  );
 
-const menuButton = document.querySelector('.menu-button');
-const nav = document.querySelector('.nav');
+  revealTargets.forEach((target) => observer.observe(target));
+} else {
+  revealTargets.forEach((target) => target.classList.add("is-visible"));
+}
 
-menuButton?.addEventListener('click', () => {
-  nav.style.display = nav.style.display === 'flex' ? 'none' : 'flex';
-  nav.style.position = 'absolute';
-  nav.style.top = '70px';
-  nav.style.right = '5vw';
-  nav.style.flexDirection = 'column';
-  nav.style.padding = '18px';
-  nav.style.background = 'rgba(255,255,255,.96)';
-  nav.style.border = '1px solid #d5dedc';
+const menuButton = document.querySelector(".menu-button");
+const nav = document.querySelector(".nav");
+
+function closeMenu() {
+  nav?.classList.remove("is-open");
+  menuButton?.setAttribute("aria-expanded", "false");
+  menuButton?.setAttribute("aria-label", "メニューを開く");
+}
+
+menuButton?.addEventListener("click", () => {
+  const isOpen = nav?.classList.toggle("is-open") ?? false;
+  menuButton.setAttribute("aria-expanded", String(isOpen));
+  menuButton.setAttribute("aria-label", isOpen ? "メニューを閉じる" : "メニューを開く");
+});
+
+nav?.querySelectorAll("a").forEach((link) => {
+  link.addEventListener("click", closeMenu);
+});
+
+document.addEventListener("keydown", (event) => {
+  if (event.key === "Escape") {
+    closeMenu();
+  }
 });

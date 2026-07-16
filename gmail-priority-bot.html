@@ -3,87 +3,135 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Gmail Priority Bot | Yuzuki Murata Portfolio</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Noto+Serif+JP:wght@400;500;700&display=swap" rel="stylesheet">
+  <meta name="description" content="就職活動メールを安全に分類するGmail Priority Botの制作内容、技術構成、現在の進捗を紹介します。" />
+  <title>Gmail Priority Bot | 村田 悠月</title>
   <link rel="stylesheet" href="./style.css" />
 </head>
 <body>
   <header class="site-header">
-    <a class="logo" href="./index.html#top">Yuzuki Murata</a>
-    <nav class="nav">
-      <a href="./index.html#works">Works</a>
-      <a href="#overview">Overview</a>
-      <a href="#artifacts">Artifacts</a>
-      <a href="#rules">Rules</a>
+    <a class="logo" href="./index.html">村田 悠月</a>
+    <nav class="nav" id="site-nav" aria-label="ページ内ナビゲーション">
+      <a href="#overview">概要</a>
+      <a href="#development">開発内容</a>
+      <a href="#safety">設計上の工夫</a>
+      <a href="#resources">成果物</a>
     </nav>
-    <a class="menu-button" href="./index.html#works">Back</a>
+    <a class="header-back" href="./index.html#personal-works">制作一覧へ</a>
   </header>
 
-  <main>
+  <main class="project-main">
     <section class="project-hero section-reveal">
-      <p class="eyebrow">Personal Development / Serverless Automation</p>
-      <h1>Gmail Priority Bot</h1>
-      <p>就活メールを重要度・カテゴリ別に整理する、Gmail APIとAWSサーバーレス構成のMVP設計です。</p>
-      <div class="project-actions">
-        <a href="#overview">概要</a>
-        <a href="#artifacts">成果物</a>
-        <a href="./projects/gmail-priority-bot/terraform/main.tf" target="_blank" rel="noopener noreferrer">Terraform</a>
+      <a class="back-link" href="./index.html#personal-works">← 個人制作へ戻る</a>
+      <div class="project-title-row">
+        <div>
+          <h1>Gmail Priority Bot</h1>
+          <p>就職活動中の重要なメールを、安全に見つけやすくする分類システム</p>
+        </div>
+        <span class="status status-progress">開発中</span>
+      </div>
+      <div class="project-links">
+        <a class="button button-primary" href="https://github.com/Muratayuduki/spam" target="_blank" rel="noopener noreferrer">GitHubで見る</a>
+        <a class="button" href="#resources">成果物を見る</a>
       </div>
     </section>
 
     <section class="section document-section section-reveal" id="overview">
-      <p class="section-label">Overview</p>
-      <h2>制作背景</h2>
-      <div class="project-summary">
-        <p>就活中の重要な連絡が、スカウト通知、レポート、広告、ニュースレターに埋もれる課題を解決するために設計しました。</p>
-        <p>メール削除、既読化、返信送信などの破壊的操作は行わず、Gmailラベル付与とDynamoDBへの分類結果保存に絞っています。</p>
-      </div>
-      <dl class="work-meta project-meta">
-        <div><dt>現状</dt><dd>要件定義、AWS構成設計、Terraformによる主要リソース作成確認まで完了。</dd></div>
-        <div><dt>担当範囲</dt><dd>要件、分類方針、安全ルール、AWS構成、Terraformリソース設計を整理し、AIを使って文章化・コード化しました。</dd></div>
-        <div><dt>評価してほしい点</dt><dd>OAuthトークンやメール本文を安全に扱い、破壊的なGmail操作を避ける設計方針です。</dd></div>
-      </dl>
-    </section>
-
-    <section class="section document-section section-reveal" id="artifacts">
-      <p class="section-label">Artifacts</p>
-      <h2>確認できる成果物</h2>
-      <div class="artifact-list">
-        <a href="./projects/gmail-priority-bot/terraform/main.tf" target="_blank" rel="noopener noreferrer">
-          <span>01</span>
-          <strong>Terraform main.tf</strong>
-          <small>DynamoDB、Secrets Manager、Lambda、IAM Role、EventBridge Schedulerの定義。</small>
-        </a>
-        <a href="./projects/gmail-priority-bot/terraform/variables.tf" target="_blank" rel="noopener noreferrer">
-          <span>02</span>
-          <strong>Terraform variables.tf</strong>
-          <small>リージョン、環境名、スケジュール、Lambdaパッケージパスなどの変数定義。</small>
-        </a>
-        <a href="./projects/gmail-priority-bot/terraform/terraform.tfvars.example" target="_blank" rel="noopener noreferrer">
-          <span>03</span>
-          <strong>tfvars example</strong>
-          <small>秘密情報を含まないサンプル設定。Schedulerは初期状態で無効化。</small>
-        </a>
+      <div class="section-heading"><h2>サービス概要</h2></div>
+      <div class="overview-grid">
+        <div class="overview-lead">
+          <p>就職活動やインターンに関するメールが、スカウト通知、広告、ニュースレターなどに埋もれてしまう課題を解決するために制作しています。</p>
+          <p>Gmailから必要最小限の情報だけを取得し、重要度とカテゴリを決定ルールで分類します。分類理由を確認画面に表示し、Gmailラベルを付けることで、対応が必要な連絡を見つけやすくします。</p>
+        </div>
+        <dl class="project-info-panel">
+          <div><dt>対象</dt><dd>就職活動・インターン・企業連絡をGmailで管理する個人</dd></div>
+          <div><dt>現在地</dt><dd>AWSリソース作成とLambdaのドライランを確認済み。OAuth設定と実メールでの安全な動作確認が次の工程です。</dd></div>
+          <div><dt>公開URL</dt><dd><a class="text-link" href="https://github.com/Muratayuduki/spam" target="_blank" rel="noopener noreferrer">github.com/Muratayuduki/spam</a></dd></div>
+        </dl>
       </div>
     </section>
 
-    <section class="section document-section section-reveal" id="rules">
-      <p class="section-label">Rules</p>
-      <h2>分類方針</h2>
-      <dl class="work-meta project-meta">
-        <div><dt>High</dt><dd>面接、日程調整、選考、内定、対応依頼など、直接行動が必要な可能性が高いメール。</dd></div>
-        <div><dt>Medium</dt><dd>スカウト通知、ES関連、提出リマインドなど、確認価値は高いが即時対応とは限らないメール。</dd></div>
-        <div><dt>Low</dt><dd>広告、ニュースレター、定期レポート、汎用的なおすすめ通知。</dd></div>
-        <div><dt>Unknown</dt><dd>送信元や件名だけでは判断できないメール。誤分類を避けるため不明として扱います。</dd></div>
-      </dl>
+    <section class="section document-section section-reveal" id="development">
+      <div class="section-heading"><h2>開発内容</h2></div>
+      <div class="detail-grid">
+        <article class="detail-card">
+          <h3>担当範囲</h3>
+          <ul class="plain-list">
+            <li>要件定義と安全ルールの整理</li>
+            <li>重要度・カテゴリ分類ルールの設計</li>
+            <li>Reactによる確認画面の実装</li>
+            <li>PythonによるLambda処理と単体テスト</li>
+            <li>TerraformによるAWS環境の構築</li>
+          </ul>
+        </article>
+        <article class="detail-card">
+          <h3>技術スタック</h3>
+          <dl class="stack-list">
+            <div><dt>画面</dt><dd>React / TypeScript / Vite</dd></div>
+            <div><dt>処理</dt><dd>Python 3.12 / AWS Lambda</dd></div>
+            <div><dt>データ</dt><dd>DynamoDB</dd></div>
+            <div><dt>連携</dt><dd>Gmail API / OAuth 2.0</dd></div>
+            <div><dt>インフラ</dt><dd>EventBridge Scheduler / Secrets Manager / CloudWatch / Terraform</dd></div>
+          </dl>
+        </article>
+        <article class="detail-card">
+          <h3>技術選定の理由</h3>
+          <p>定期実行する小規模な処理のため、サーバー管理が不要なLambdaとEventBridge Schedulerを選びました。分類は、コストと個人情報保護、判断理由の説明しやすさを優先し、初期版ではLLMや機械学習を使わない決定ルール方式にしています。</p>
+        </article>
+        <article class="detail-card">
+          <h3>現在確認できていること</h3>
+          <p>重要度分類、Gmailメタデータの正規化、Secrets ManagerとDynamoDBの接続境界、Lambdaハンドラ、単体テストを実装しています。Reactの確認画面はモックデータで一覧、絞り込み、詳細確認ができます。</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section document-section section-reveal" id="safety">
+      <div class="section-heading"><h2>設計上の工夫</h2></div>
+      <div class="safety-layout">
+        <div>
+          <h3>メールを壊さない</h3>
+          <p>削除、アーカイブ、既読化、自動返信は行いません。初期版が変更するのは分類ラベルだけに限定しています。</p>
+        </div>
+        <div>
+          <h3>保存情報を減らす</h3>
+          <p>メール本文全体は保存せず、送信元、件名、短い抜粋、受信時刻など、分類と確認に必要なメタデータだけを扱います。</p>
+        </div>
+        <div>
+          <h3>判断理由を残す</h3>
+          <p>High、Medium、Low、Unknownの結果だけでなく、どのルールで分類したかを保存し、誤分類を確認しやすくしています。</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section document-section section-reveal" id="resources">
+      <div class="section-heading"><h2>成果物</h2></div>
+      <div class="resource-list">
+        <a href="https://github.com/Muratayuduki/spam/tree/main/docs" target="_blank" rel="noopener noreferrer">
+          <span>設計資料</span>
+          <strong>要件・構成・データ・セキュリティ方針</strong>
+          <small>プロジェクトの判断と実装方針をまとめた資料です。</small>
+        </a>
+        <a href="https://github.com/Muratayuduki/spam/tree/main/backend" target="_blank" rel="noopener noreferrer">
+          <span>バックエンド</span>
+          <strong>Python / Lambda</strong>
+          <small>分類処理、Gmail連携境界、保存処理、テストを確認できます。</small>
+        </a>
+        <a href="https://github.com/Muratayuduki/spam/tree/main/frontend" target="_blank" rel="noopener noreferrer">
+          <span>フロントエンド</span>
+          <strong>React確認画面</strong>
+          <small>分類結果の一覧、絞り込み、詳細表示を実装しています。</small>
+        </a>
+        <a href="https://github.com/Muratayuduki/spam/tree/main/infra/terraform" target="_blank" rel="noopener noreferrer">
+          <span>インフラ</span>
+          <strong>Terraform</strong>
+          <small>AWSリソースと権限の定義を確認できます。</small>
+        </a>
+      </div>
     </section>
   </main>
 
   <footer class="footer">
-    <a href="./index.html#works">Back to Works</a>
-    <p>&copy; 2026 Yuzuki Murata Portfolio</p>
+    <a href="./index.html#personal-works">個人制作へ戻る</a>
+    <p>&copy; 2026 村田 悠月</p>
   </footer>
 
   <script src="./script.js"></script>
